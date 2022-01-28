@@ -1,3 +1,8 @@
 #!/bin/bash
-ifconfig en0 | grep "inet " | sed -n -e 's/^.*broadcast //p'
-arp -a -n | grep "10.12" | cut -d " " -f 2 | sed 's/[()]//g' 
+ADDR=$(ifconfig en0 | grep "inet " | sed -n -e 's/^.*broadcast //p')
+SUBNET=$(sed -e 's/.255//g' <<< "$ADDR")
+
+echo $ADDR
+
+ping $ADDR -c 1 > /dev/null
+arp -ai en0 | grep "$SUBNET" | cut -d " " -f 2 | sed 's/[()]//g' 
