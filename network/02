@@ -1,1 +1,3 @@
+#!/bin/bash
 ifconfig en0 | grep "inet " | sed -n -e 's/^.*broadcast //p'
+arp -a -n | grep "10.12" | cut -d " " -f 2 | sed 's/[()]//g' 
