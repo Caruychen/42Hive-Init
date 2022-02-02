@@ -1,1 +1,7 @@
 nslookup who.int | grep "Server" | awk '{print $2}'
+
+# nslookup finds the IP address that belongs to the DNS that responds to the who.int query
+# If the browser of the client doesn't have the IP address belonging to who.int stored in cache
+# the query is sent to the recursive resolver. From there, if the IP address isn't stored in cache, it usually checks with the root DNS server which points to the TLD server, which then points to the authoritative name server. 
+# Sometimes a non-authoritative answer is received, which is usually a DNS that's not the official name server for the domain, but have a cache with previously requested DNS records from previous DNS lookups. Usually belongs with your ISP, and using the cache speeds up the lookup process.
+
