@@ -1,0 +1,10 @@
+# Query an external DNS server on the who.int domain name (ie.: google 8.8.8.8)
+nslookup who.int 1.1.1.1
+
+# You can query any external DNS server by specifying the IP after the domain name when 
+# using nslookup
+# Any public DNS server will do:
+# Cisco OpenDNS: 208.67. 222.222 and 208.67. 220.220
+# Cloudflare 1.1. 1.1: 1.1. 1.1 and 1.0. 0.1
+# Google Public DNS: 8.8. 8.8 and 8.8. 4.4
+# Quad9: 9.9. 9.9 and 149.112. 112.112
