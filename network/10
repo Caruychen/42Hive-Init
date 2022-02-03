@@ -1,0 +1,16 @@
+# Identify the network devices between your computer and the who.int domain
+traceroute who.int
+
+# Traceroute allows you to trace the path of packets sent from your machine to 
+# each of the systems between you and the destination, in this case, who.int domain.
+# It uses the IP protocol `time to live` field and attempts to elicit an ICMP TIME_EXCEEDED
+# response from each gateway along the path to some host. ICMP stands for Internet Control
+# Message Protocol.
+# By default, traceroute routes three packets of data to test each hop, which explains
+# the three time values. These times refer to the amount of time taken for a packet
+# to reach its destination and route back an ICMP message to the source.
+# Some hops may only return a set of 3 stars. This can mean 1 of 2 things:
+# 1. The device at that hop was not configured to reply to ICMP/UDP traffic, but the message was passed on nonetheless.
+# 2. The packets were dropped due to an issue on the network.
+# Since traceroute completed successfully, then it most likely means the responses with stars (*)
+# were due to the devices not being configured for ICMP/UDP traffic.
