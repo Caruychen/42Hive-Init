@@ -1,0 +1,5 @@
+# Find the external IP of 42.fr
+# echo 163.172.250.16
+nslookup 42.fr | sed -ne '/answer/,$ p' | grep "Address" | awk '{print $2}'
+
+# nslookup will provide the external IP address
