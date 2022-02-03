@@ -1,0 +1,9 @@
+# Find the provider of who.int
+IP=$(nslookup who.int | sed -ne '/answer/,$ p' | grep "Address" | awk '{print $2}')
+whois $IP
+
+# Using nslookup, we find the IP address that who.int is registered with
+# The whois system lists records that contains details about the ownership of
+# domains and the owners. Running the whois command against the IP address
+# returned by nslookup reveals the owner of the IP as cloudflare. Meaning
+# cloudlfare is the internet hosting provider for who.int
