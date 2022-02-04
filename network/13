@@ -1,0 +1,3 @@
+# Thanks to the previous question and the reverse DNS find the name of your host
+IP=$(ipconfig getpacket en0 | grep "yiaddr" | sed 's/^.*= //')
+nslookup $IP
