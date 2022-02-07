@@ -1,0 +1,6 @@
+# What file contains the local DNS entries
+cat '/etc/hosts'
+
+# /etc/hosts stores the mapping of hostnames to IP addresses before DNS can be
+# referenced. You can see from the output of the command, a mapping between
+# localhost and its IP address, localhost just means "this computer"
