@@ -1,3 +1,4 @@
+# Identify the default gateway in the routing table
 nslookup who.int | grep "Server" | awk '{print $2}'
 
 # nslookup finds the IP address that belongs to the DNS that responds to the who.int query
