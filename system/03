@@ -1,0 +1,10 @@
+# What file has to be modified to make it permanent?
+sudo hostnamectl set-hostname NEW_HOSTNAME
+
+# The above command is available on newer version of Linux distros
+# For older distros, hostnames can be changed by editing the names as follows:
+vi /etc/hostname
+# After editing the hostname, use
+vi /etc/hosts
+# to edit the IP to hostname mapping
+# finally, the system needs to be rebooted.
