@@ -1,0 +1,5 @@
+# What command gives you the time since your system was last booted?
+who -b
+
+# The who utility displays a list of all users currently logged on.
+# The -b option shows the time of last system boot.
