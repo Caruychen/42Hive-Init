@@ -1,0 +1,4 @@
+# What command can you use to rename your system?
+sudo hostname user-name
+
+# The user must be given sudo rights first before renaming the hostname
