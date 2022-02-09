@@ -1,0 +1,6 @@
+# Name the command that displays the available space left and used on the system
+in an humanly understandable way
+df -h
+
+# df utility displays stats about free disk space and used disk space.
+# the h option shows human readable in powers of 1024
