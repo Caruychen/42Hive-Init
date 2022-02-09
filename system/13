@@ -1,0 +1,7 @@
+# Name the command that find, in real time, currently running processes
+ps aux
+
+# ps utility shows the process status. The following options give the required details:
+# a: select all processes (others and your own)
+# u: all processes on a terminal
+# x: show processes includinng those that don't have a controlling terminal (ttys).
