@@ -1,0 +1,10 @@
+# Figure out the PID of the SSHD service.
+cat /var/run/sshd.pid
+
+# Alternatively, run:
+# ps aux | grep "/usr/sbin/sshd" | grep -v grep | awk '{print $2}'
+# ps aux will show all the processes running for all users
+# grep "/usr/sbin/sshd" shows the sshd process from the outputs
+# Sometimes the grep process will also show up, so grep -v grep makes sure that only the sshd
+# process is searched
+# the PID is the second element from awk
