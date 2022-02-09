@@ -1,0 +1,22 @@
+# Name the command that lists the partition tables of drives?
+lsblk
+
+# lsblk lists information about all available or specified block device.
+# dev/sda shows up as sda and is the main disk drive. It may then have 
+# partitions as sda1, sda2 ... sda5 etc.
+# The "sd" in sda originally identifies a SCSI (Smalll Computer System Interface) device.
+# It's now a catch-all for any block device, ever since the proliferation of USB and other
+# removable data carriers.
+# The "a" signifies the order in which the drive is first found -- a, b, c...z, Aa...Az etc.
+# The numbers after sda..sdz etc. signify the partition on the device. 
+# sudo fdisk -l will show more details of the DOS partitioning.
+# You will notice a primary partition, usually starting as sda1. A traditional partition table
+# will have a maximum of four primary partitions.
+# There is also an extended partition (in my case, sda2 which starts out as 1K size). This
+# is a workaround to the max 4 partition limit. It's a container for logical partitions,
+# which allows one to extend the maximum number of drives limitation).
+# The SWAP partition (in my case, sda5), serves as an extension of RAM. Used as 
+# virtual memory when the system runs out of physical memory. Swapping occurs when a 
+# running process requires mroe RAM than there is available. Since the hard-drive memory
+# is much slower, some degree of prioritisation occurs when considering what processes are moved to SWAP.
+# Perhaps solid state drive have made this performance hit less of an issue?
