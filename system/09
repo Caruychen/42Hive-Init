@@ -1,0 +1,5 @@
+# What command lets you know who is connected to the System?
+users
+
+# users lists the login names of the users currently logged in on the system,
+# in sorted order, space separated, on a single line.
