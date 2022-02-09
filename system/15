@@ -1,0 +1,4 @@
+# Find the command that kills the background command’s process
+kill PID
+
+# PID stands for process ID given when the program is executed in the background
