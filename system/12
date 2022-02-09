@@ -1,0 +1,8 @@
+# Figure out the exact size of each folder of /var in a humanly understandable way followed by the path of it.
+sudo du -sh /var/*
+
+# the du utility shows file system blog usage for each file argument.
+# the h option will give human readable output. 
+# in order to not list the size of all files, and only show the summary of
+# folder sizes in /var we use -s. That would also need the argument to be
+# /var/*, otherwise it only shows the size of /var
