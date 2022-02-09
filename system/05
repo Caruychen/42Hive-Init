@@ -1,2 +1,9 @@
 # Name the command that determines the state of the SSH service.
-ps aux | grep sshd
+service ssh status
+
+# The above command gives the status for the ssh client
+# For the ssh server status, you can check by running:
+# ps aux | grep sshd
+# Which gives the process status, and should show sshd running.
+# sshd is the daemon program for ssh. It is the server that listens
+# for connections from clients.
