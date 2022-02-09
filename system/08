@@ -1,0 +1,5 @@
+# What file contains the RSA keys of systems that are authorized to connect via SSH?
+~/.ssh/authorized_keys
+
+# This file contains a list of public keys, one per line, that are authorized to log into
+# the account of the remote server that this file exists in.
