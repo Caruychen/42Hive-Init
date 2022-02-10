@@ -1,0 +1,15 @@
+# Write a script which delete an ACTIVE user on the VM.
+echo "Active users:"
+users
+
+printf "\nEnter user to delete: "
+read user
+
+if [ $user != "root" ]
+then
+	echo "Deleting $user"
+	sudo killall -u $user
+	sudo userdel -f $user
+else
+	echo "don't be stupid.."
+fi
