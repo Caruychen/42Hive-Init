@@ -1,0 +1,4 @@
+# Explain how connect yourself as new user. (With graphic session and ssh session)
+To connect via graphical interface, start the session in Virtual Box, and enter username and password
+To connnect via ssh, in the terminal, enter:
+ss [username]@[local IP] -p [port]
