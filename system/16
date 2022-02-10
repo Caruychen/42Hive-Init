@@ -1,0 +1,7 @@
+# Find the service which makes it possible to run specific tasks following a regular schedule
+cron
+
+# Use crontab to edit the cron table, and schedule jobs
+# crontab -l will list the crontab for current user
+# crontab -e to edit crontab
+# cat /etc/crontab will show how to format the cron jobs
