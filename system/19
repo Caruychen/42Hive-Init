@@ -1,0 +1,27 @@
+# List all services which are started at boot time and name this kind of services
+accounts-daemon.service            enabled enabled
+anacron.service                    enabled enabled
+apparmor.service                   enabled enabled
+avahi-daemon.service               enabled enabled
+bluetooth.service                  enabled enabled
+console-setup.service              enabled enabled
+cron.service                       enabled enabled
+e2scrub_reap.service               enabled enabled
+getty@.service                     enabled enabled
+keyboard-setup.service             enabled enabled
+ModemManager.service               enabled enabled
+networking.service                 enabled enabled
+NetworkManager-dispatcher.service  enabled enabled
+NetworkManager-wait-online.service enabled enabled
+NetworkManager.service             enabled enabled
+rsyslog.service                    enabled enabled
+ssh.service                        enabled enabled
+switcheroo-control.service         enabled enabled
+systemd-pstore.service             enabled enabled
+systemd-timesyncd.service          enabled enabled
+udisks2.service                    enabled enabled
+unattended-upgrades.service        enabled enabled
+wpa_supplicant.service             enabled enabled
+
+# The service that shows the above
+systemctl list-unit-files --type=service --state=enabled --all
