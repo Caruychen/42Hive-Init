@@ -1,2 +1,7 @@
 # Use the output of the previous command to find the name and IP address of the device that makes the link between you (local network) and the outside world
 traceroute who.int | grep "nat" | awk '{print $3}'
+
+# The device is the Network Address Translation (NAT) Server.
+# NAT is the reouter which has one interface in the local (inside) network
+# and one interface in the global (outside) network. It provides internet access
+# to the local hosts.
