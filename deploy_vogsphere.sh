@@ -6,7 +6,7 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/11 13:49:13 by cchen             #+#    #+#              #
-#    Updated: 2022/02/11 16:20:24 by cchen            ###   ########.fr        #
+#    Updated: 2022/02/11 16:22:39 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,4 +17,4 @@ rm -rf ./${VOGSPHERE}/*
 cp -r ./$REPO_NAME/network ./${VOGSPHERE}
 cp -r ./$REPO_NAME/system ./${VOGSPHERE}
 cp -r ./$REPO_NAME/scripts ./${VOGSPHERE}
-chmod +x ./$REPO_NAME/scripts/*
+chmod +x ./${VOGSPHERE}/scripts/*
