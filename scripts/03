@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# newrm -- A command to replace rm.
+# This script provides a rudimentary unremove capability by creating and 
+# utilizing a new hidden directory within the user's home directory.
+# It can handle directories of content and individual files. If the -f
+# option is specified, files are removed and NOT archived.
+
+# To isntall the script, add an alias to replace rm like:
+# alias rm=yourpath/newrm
+
+# Warning: a cron job should be implemented to clear the trash directory
+# at regular intervals. Otherwise, nothing gets deleted and you'll run out of space
+
+# INITIALISE PARAMS AND OPTIONS
+# =============================
+
+archivedir="$HOME/.deleted"
+realrm="$(which rm)"
+copy="$(which cp) -R"
+
+if [ $# -eq 0 ]; then							# In case of error, use real 'rm' outputs
+	exec $realrm
+fi
+
+flags=""
+
+while getopts "dfiPRrvW" opt
+do
+	case $opt in
+		f ) exec $realrm "$@"					# Exec will exit script, replaces shell with realrm
+			;;
+		* ) flags="$flags -$opt"
+			;;
+	esac
+done
+shift $(( $OPTIND - 1 ))
+
+# BEGIN MAIN SCRIPT
+# =================
+
+if [ ! -d $archivedir ]; then
+	if [ ! -w $HOME ]; then
+		echo "$0 failed: can't create $archivedir in $HOME" >&2	# Direct outut to stderr
+		exit 1
+	fi
+	mkdir $archivedir
+	chmod 700 $archivedir						# A little privacy thanks.
+fi
+
+for arg
+do
+	newname="$archivedir/$(date +%S.%M.%H.%d.%m).$(basename $arg)"
+	if [ -f "$arg" -o -d "$arg" ]; then
+		$copy "$arg" "$newname"
+	fi
+done
+
+exec $realrm $flags "$@"
