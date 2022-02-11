@@ -3,3 +3,4 @@
 nslookup 42.fr | sed -ne '/answer/,$ p' | grep "Address" | awk '{print $2}'
 
 # nslookup will provide the external IP address
+# Additionally, nslookup intra.42.fr will give IP addresses ending in 12 and 13
