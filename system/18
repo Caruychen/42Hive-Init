@@ -1,5 +1,2 @@
 # Find the command that kills ssh service
-kill -9 PID
-
-# Replace PID with the ID number, can be found using ps -ef | grep ssh
-# It is also possible to use exit from the connected terinal
+service ssh stop
