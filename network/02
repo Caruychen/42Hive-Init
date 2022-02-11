@@ -1,8 +1,10 @@
-#!/bin/bash
+# Part a
+ifconfig en0 | grep "inet " | sed -n -e 's/^.*broadcast //p'
+
+# Part b
+# Use arp -ai en0, should ping the broadcast address first
 ADDR=$(ifconfig en0 | grep "inet " | sed -n -e 's/^.*broadcast //p')
 SUBNET=$(sed -e 's/.255//g' <<< "$ADDR")
-
-echo $ADDR
 
 ping $ADDR -c 1 > /dev/null
 arp -ai en0 | grep "$SUBNET" | cut -d " " -f 2 | sed 's/[()]//g' 
