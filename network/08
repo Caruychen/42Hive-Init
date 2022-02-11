@@ -2,6 +2,8 @@
 IP=$(nslookup who.int | sed -ne '/answer/,$ p' | grep "Address" | awk '{print $2}')
 whois $IP
 
+# The provider is Cloudflare
+
 # Using nslookup, we find the IP address that who.int is registered with
 # The whois system lists records that contains details about the ownership of
 # domains and the owners. Running the whois command against the IP address
