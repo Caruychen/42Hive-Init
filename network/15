@@ -1,0 +1,9 @@
+# Make the intra.42.fr address reroute to 46.19.122.85
+# If you had root access, you can edit the file via
+sudo vim /etc/hosts
+
+# Then enter the below line to reroute:
+46.19.122.85	intra.42.fr
+
+# After that, you can confirm by running
+traceroute intra.42.fr
