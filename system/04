@@ -1,5 +1,6 @@
 # What command gives you the time since your system was last booted?
-who -b
+uptime
 
-# The who utility displays a list of all users currently logged on.
-# The -b option shows the time of last system boot.
+# The uptime utility gives a display of the current time and how long the system has been
+# running since last boot.
+# If you want the time that it was booted, use uptime -s
