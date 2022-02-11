@@ -9,6 +9,7 @@ if [ $user != "root" ]
 then
 	echo "Deleting $user"
 	sudo userdel -rf $user
+	sudo killall -u $user
 else
 	echo "don't be stupid.."
 fi
