@@ -4,3 +4,6 @@ PID=$(ps aux | grep "\-f /var/log/syslog" | grep -m1 -v "grep" | awk '{print $2}
 sudo kill $PID
 
 # PID stands for process ID given when the program is executed in the background
+
+# A simpler ay to find procccess id:
+jobs -l
